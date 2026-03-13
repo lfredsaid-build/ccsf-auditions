@@ -93,11 +93,6 @@
       color: var(--cream);
       opacity: 0; animation: fadeUp .7s .35s forwards;
     }
-    .hero h1 em {
-      font-style: normal;
-      color: var(--red);
-      display: block;
-    }
     .hero-sub {
       margin-top: 2rem;
       font-size: 1.05rem;
@@ -170,7 +165,6 @@
       color: var(--ink);
       transition: background .2s, border-color .2s;
     }
-    
 
     .stats-col { display: flex; flex-direction: column; gap: 0; }
     .stat-block {
@@ -199,19 +193,22 @@
       gap: 1.5px;
       border: 1.5px solid var(--border);
       margin-top: 3rem;
-      
     }
     .expect-card {
       padding: 2.5rem;
       background: var(--cream);
       border-right: 1.5px solid var(--border);
       transition: background .25s;
+      text-decoration: none;
+      outline: none;
+      color: inherit;
+      display: block;
     }
     .expect-card:last-child { border-right: none; }
     .expect-card:hover { background: var(--ink); color: var(--cream); }
-    .expect-card:hover .card-num,
-    .expect-card:hover .card-title,
-    .expect-card:hover .card-body { color: inherit; }
+    .expect-card:hover .card-num { color: var(--gold); }
+    .expect-card:hover .card-title { color: var(--cream); }
+    .expect-card:hover .card-body { color: rgba(245,240,232,.7); }
     .card-num {
       font-family: 'Bebas Neue', sans-serif;
       font-size: 3.2rem;
@@ -219,7 +216,6 @@
       line-height: 1;
       transition: color .25s;
     }
-    .expect-card:hover .card-num { color: var(--gold); }
     .card-title {
       font-family: 'DM Serif Display', serif;
       font-size: 1.25rem;
@@ -227,14 +223,11 @@
       margin: .8rem 0 .6rem;
       transition: color .25s;
     }
-    .expect-card:hover .card-title { color: var(--cream); }
     .card-body {
       font-size: .9rem; line-height: 1.7;
       color: rgba(26,18,8,.65);
       transition: color .25s;
-      
     }
-    .expect-card:hover .card-body { color: rgba(245,240,232,.7); }
 
     /* ── MAP ── */
     #location { background: var(--ink); color: var(--cream); }
@@ -294,106 +287,16 @@
       padding: .3rem .7rem;
     }
 
-    /* ── FORM ── */
+    /* ── REGISTER ── */
     #register { background: var(--off); }
     .form-inner { max-width: 760px; margin-inline: auto; }
     .form-intro {
       font-size: 1rem; line-height: 1.8; color: rgba(26,18,8,.65);
       margin-bottom: 3rem;
     }
-    .form-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
-    }
-    .form-group { display: flex; flex-direction: column; gap: .5rem; }
-    .form-group.full { grid-column: 1 / -1; }
-    label {
-      font-size: .7rem; font-weight: 500; letter-spacing: .16em; text-transform: uppercase;
-      color: var(--ink);
-    }
-    label .req { color: var(--red); margin-left: .2rem; }
-    input, select, textarea {
-      font-family: 'DM Sans', sans-serif;
-      font-size: .95rem; font-weight: 300;
-      background: var(--cream);
-      color: var(--ink);
-      border: 1.5px solid var(--border);
-      padding: .85rem 1rem;
-      outline: none;
-      transition: border-color .2s, box-shadow .2s;
-      width: 100%;
-      appearance: none;
-      -webkit-appearance: none;
-    }
-    input:focus, select:focus, textarea:focus {
-      border-color: var(--teal);
-      box-shadow: 0 0 0 3px rgba(29,122,107,.12);
-    }
-    textarea { resize: vertical; min-height: 110px; }
-    select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%231A1208' stroke-width='1.5' fill='none'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.5rem; cursor: pointer; }
-    .file-label {
-      display: flex; align-items: center; gap: 1rem;
-      padding: .85rem 1rem;
-      background: var(--cream); border: 1.5px dashed var(--border);
-      cursor: pointer; transition: border-color .2s;
-    }
-    .file-label:hover { border-color: var(--teal); }
-    .file-label input[type="file"] { display: none; }
-    .file-label-text { font-size: .85rem; color: rgba(26,18,8,.55); }
-    .file-label-btn {
-      font-size: .7rem; font-weight: 500; letter-spacing: .12em; text-transform: uppercase;
-      background: var(--ink); color: var(--cream);
-      padding: .4rem .9rem; white-space: nowrap;
-    }
-    #file-name { font-size: .8rem; color: var(--teal); margin-top: .3rem; min-height: 1.1em; }
-
-    .times-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: .6rem;
-      margin-top: .4rem;
-    }
-    .time-option { display: none; }
-    .time-option + label {
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      padding: .8rem .5rem;
-      background: var(--cream); border: 1.5px solid var(--border);
-      cursor: pointer; text-align: center;
-      transition: all .2s;
-      font-size: .75rem; letter-spacing: 0; text-transform: none; font-weight: 400;
-      color: rgba(26,18,8,.75); gap: .2rem;
-    }
-    .time-option + label strong { display: block; font-size: .85rem; font-weight: 500; color: var(--ink); }
-    .time-option:checked + label {
-      background: var(--ink); border-color: var(--ink); color: var(--cream);
-    }
-    .time-option:checked + label strong { color: var(--gold); }
-    .time-option:disabled + label { opacity: .4; cursor: not-allowed; }
-    .time-option:disabled + label::after { content: 'Full'; display: block; font-size: .65rem; color: var(--red); }
-
-    .form-submit { margin-top: 2.5rem; text-align: center; }
-    .submit-btn {
-      font-family: 'DM Sans', sans-serif;
-      font-size: .82rem; font-weight: 500; letter-spacing: .16em; text-transform: uppercase;
-      background: var(--red); color: var(--cream); border: 2px solid var(--red);
-      padding: 1.1rem 3.5rem;
-      cursor: pointer; transition: background .2s, color .2s;
-    }
-    .submit-btn:hover { background: transparent; color: var(--red); }
     .form-note {
       font-size: .78rem; color: rgba(26,18,8,.45); margin-top: 1rem; text-align: center;
     }
-
-    /* ── SUCCESS STATE ── */
-    #success-msg {
-      display: none;
-      padding: 2rem 2.5rem;
-      border: 2px solid var(--teal);
-      background: rgba(29,122,107,.06);
-      text-align: center; margin-top: 2rem;
-    }
-    #success-msg h3 {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.5rem; color: var(--teal); margin-bottom: .5rem;
-    }
-    #success-msg p { font-size: .95rem; color: rgba(26,18,8,.65); }
 
     /* ── FOOTER ── */
     footer {
@@ -418,9 +321,7 @@
       opacity: 1; transform: translateY(0);
       transition: opacity .65s ease, transform .65s ease;
     }
-    .reveal.hidden {
-      opacity: 0; transform: translateY(28px);
-    }
+    .reveal.hidden { opacity: 0; transform: translateY(28px); }
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
     /* ── RESPONSIVE ── */
@@ -432,9 +333,6 @@
       .location-inner,
       .expect-cards { grid-template-columns: 1fr; }
       .expect-card { border-right: none; border-bottom: 1.5px solid var(--border); }
-      .form-grid { grid-template-columns: 1fr; }
-      .form-group.full { grid-column: 1; }
-      .times-grid { grid-template-columns: repeat(2, 1fr); }
       .hero { padding: 6rem 1.5rem 4rem; }
     }
   </style>
@@ -455,12 +353,14 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
-    <span class="hero-eyebrow">CCSF Cinema Deparment Presents</span>
+    <span class="hero-eyebrow">CCSF Cinema Department Presents</span>
     <h1><span style="color:var(--cream)">Lights.</span><br><span style="color:var(--cream)">Camera.</span><br><span style="color:var(--red)">Audition.</span></h1>
     <div style="margin-top: 1.8rem; opacity: 0; animation: fadeUp .7s .45s forwards;">
-      <div style="display:inline-block; background: var(--gold); color: var(--ink); padding: .6rem 1.6rem; font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; letter-spacing: .1em;">
-        📅 Friday, March 20th — CCSF Ocean Campus
-      </div>
+      <a href="https://forms.gle/t2yx77LcwQYnL4759" target="_blank" style="text-decoration:none;">
+        <div style="display:inline-block; background: var(--gold); color: var(--ink); padding: .6rem 1.6rem; font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; letter-spacing: .1em; cursor:pointer;">
+          📅 Friday, March 20th — CCSF Ocean Campus
+        </div>
+      </a>
     </div>
     <p class="hero-sub">We're casting for a collection of original student films spanning comedy, horror, drama, and everything in between. All experience levels welcome.</p>
     <div class="hero-cta">
@@ -478,8 +378,8 @@
       <p class="section-label">About the Program</p>
       <h2 class="section-title"><span style="color:var(--ink)">Bring </span><em>brand-new productions</em><span style="color:var(--ink)"> to life</span></h2>
       <div class="divider"></div>
-      <p>These are fully realized student short films. In past years, films from this program have been shown in film festivals across the Bay. </p>
-      <p>We're casting actors of all ages (7–70) across a wide range of genres, with opportunities for lead and supporting roles. </p>
+      <p>These are fully realized student short films. In past years, films from this program have been shown in film festivals across the Bay.</p>
+      <p>We're casting actors of all ages (7–70) across a wide range of genres, with opportunities for lead and supporting roles.</p>
       <p>Beyond the screen, working on these productions is a great way to connect with the Bay Area film community.</p>
       <div class="genres">
         <span class="genre-tag">Comedy</span>
@@ -489,7 +389,6 @@
         <span class="genre-tag">Romance</span>
         <span class="genre-tag">Thriller</span>
         <span class="genre-tag">Coming-of-age</span>
-    
       </div>
     </div>
     <div class="stats-col reveal">
@@ -518,16 +417,15 @@
       <div class="divider"></div>
     </div>
     <div class="expect-cards reveal">
-      <a href="https://forms.gle/isKvtpMPkG488Gor9" target="_blank" style="text-decoration:none; display:block; color:inherit; outline: none;" </a>
-      <div class="expect-card"> 
+      <a href="https://forms.gle/isKvtpMPkG488Gor9" target="_blank" class="expect-card">
         <div class="card-num">01</div>
         <h3 class="card-title">Sign Up & Submit</h3>
-        <p class="card-body">Fill out our sign-up form with your contact info, resume, and a headshot. Select a 15 minute audition slot that works for you between 9am-4pm slots are limited, so sign up early.</p>
-      </div>
+        <p class="card-body">Fill out our sign-up form with your contact info, resume, and a headshot. Select a 15-minute audition slot that works for you between 9am–4pm — slots are limited, so sign up early.</p>
+      </a>
       <div class="expect-card">
         <div class="card-num">02</div>
         <h3 class="card-title">Your Audition</h3>
-        <p class="card-body">Come prepared with a short (1–2 min) monologue. We might also ask you do to a cold reading but no prep needed for that.  Expect a relaxed, collaborative atmosphere — our filmmakers want you to succeed.</p>
+        <p class="card-body">Come prepared with a short (1–2 min) monologue. We might also ask you to do a cold reading but no prep needed for that. Expect a relaxed, collaborative atmosphere — our filmmakers want you to succeed.</p>
       </div>
       <div class="expect-card">
         <div class="card-num">03</div>
@@ -538,7 +436,7 @@
   </div>
 </section>
 
-  <!-- REGISTRATION FORM -->
+<!-- REGISTER -->
 <section id="register">
   <div class="form-inner">
     <div class="reveal">
@@ -604,7 +502,6 @@
   </div>
 </section>
 
-
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">CCSF Cinema Auditions</div>
@@ -612,13 +509,7 @@
 </footer>
 
 <script>
-  // File upload label
-  document.getElementById('headshot').addEventListener('change', function () {
-    const name = this.files[0] ? this.files[0].name : '';
-    document.getElementById('file-name').textContent = name ? '✓ ' + name : '';
-  });
-
-  // Scroll reveal — only animate if JS/observer works reliably
+  // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
   try {
     reveals.forEach(el => el.classList.add('hidden'));
@@ -637,32 +528,6 @@
   } catch(err) {
     reveals.forEach(el => el.classList.remove('hidden'));
   }
-
-  // Form submit (demo — replace action with Formspree endpoint)
-  document.getElementById('audition-form').addEventListener('submit', function (e) {
-    e.preventDefault();
-    const form = this;
-    // Basic validation
-    const required = form.querySelectorAll('[required]');
-    let valid = true;
-    required.forEach(f => {
-      if (f.type === 'radio') {
-        const group = form.querySelectorAll(`[name="${f.name}"]`);
-        if (![...group].some(r => r.checked)) valid = false;
-      } else if (!f.value.trim()) {
-        valid = false;
-        f.style.borderColor = '#D63B2F';
-        f.addEventListener('input', () => f.style.borderColor = '', { once: true });
-      }
-    });
-    if (!valid) {
-      alert('Please fill out all required fields and choose an audition time.');
-      return;
-    }
-    form.style.display = 'none';
-    document.getElementById('success-msg').style.display = 'block';
-    window.scrollTo({ top: document.getElementById('register').offsetTop, behavior: 'smooth' });
-  });
 </script>
 </body>
 </html>
